@@ -43,6 +43,22 @@ const SPACE_CANDY_DURATION = 5000
 const SPACE_CANDY_INTERVAL_FREQ = 10000
 const FREEZE_ALIENS_DURATION = 5000
 
+const gSounds = {
+    laser: 'laser1',
+    laserSuper: 'laserSuper1',
+    explosion: 'explosion1',
+    shieldOn: 'shieldOn1',
+    shieldOff: 'shieldOff1',
+    bunkerHit: 'bunker1',
+    superOn: 'superOn1',
+    superOff: 'superOff1',
+    dazed: 'rockHitHero1',
+    rockDestroyed: 'hitRock1',
+    heroDefeat: 'defeat1',
+    heroVictory: 'victory1',
+    candy: 'candy1'
+}
+
 // Matrix of cell objects. e.g.: {type: SKY, gameObject: ALIEN}
 let gBoard
 let gGame = {
@@ -129,7 +145,7 @@ function gameOver(isHeroHit = false) {
     const msg = isHeroHit ? `Try to avoid rocks!` : `Don't let them reach you!`
     elMsg.textContent = 'You lost!\n' + msg
     toggleModal()
-
+    playAudio(gSounds.heroDefeat)
 }
 
 function handleSpaceCandyHit() {

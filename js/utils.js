@@ -469,3 +469,4 @@ function toggleInstructions() {
     const elModal = getEl('.instructions-modal')
     elModal.classList.toggle('hidden')
 }
+

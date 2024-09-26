@@ -183,7 +183,8 @@ function onLaserHitAlien(pos) {
         gHero.isShoot = false
         return
     }
-
+    gHero.isSuper ?  playAudio(gSounds.laserSuper) : playAudio(gSounds.laser)
+    
     gIsLaserHit = true
     console.log('Laser hit an alien')
     handleAlienHit(pos)
@@ -194,6 +195,7 @@ function onLaserHitAlien(pos) {
 function onLaserHitBunker(pos) {
     console.log('Laser hit a bunker')
     handleBunkerHit(pos)
+    playAudio(gSounds.bunkerHit)
     gHero.isShoot = false
 }
 
@@ -205,12 +207,14 @@ function onLaserHitLaser() {
 function onLaserHitRock() {
     console.log('Laser hit rock')
     clearRockInterval()
+    playAudio(gSounds.rockDestroyed)
     gHero.isShoot = false
 }
 
 function onLaserHitSpaceCandy() {
     console.log('Laser hit a space candy')
     handleSpaceCandyHit()
+    playAudio(gSounds.candy)
     gHero.isShoot = false
 }
 
@@ -237,6 +241,7 @@ function blowUpNeighbours() {
         handleBlowUpNeighbour(negs[i])
     }
     blowUpNeighbour(gLaserPos, true)
+    playAudio(gSounds.explosion)
     gHero.isShoot = false
 }
 
@@ -273,14 +278,15 @@ function enableHeroShield() {
     gHero.isShield = true
     gHero.shieldCount--
     renderShields()
-
     updateAndRenderCell(gHero.pos, getHeroGameObject())
+    playAudio(gSounds.shieldOn)
 
     setTimeout(() => {
 		if (!gGame.isOn) return
 		
         gHero.isShield = false
         updateAndRenderCell(gHero.pos, GAME_OBJECTS.HERO)
+        playAudio(gSounds.shieldOff)
     }, SHIELD_DURATION)
 }
 
@@ -293,13 +299,15 @@ function enableSuperLaser() {
     gHero.isSuper = true
     gHero.isShoot = false
     gHero.superLaserCount--
+    playAudio(gSounds.superOn)
     renderSuperLasers()
     
     setTimeout(() => {
-        clearAllLaserIntervals()
-
+        
         gHero.isSuper = false
         gHero.isShoot = false // for safety
+        clearAllLaserIntervals()
+        playAudio(gSounds.superOff)
     }, SUPER_LASER_DURATION)
 }
 
@@ -343,4 +351,5 @@ function handlePlayerVictory() {
     const elMsg = getEl('.modal-message');
     elMsg.textContent = 'Victory! All aliens cleared!\n' + 'Make sure to try all difficulties!'
     toggleModal()
+    playAudio(gSounds.heroVictory)
 }

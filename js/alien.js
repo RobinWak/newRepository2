@@ -252,17 +252,19 @@ function onRockHitLaser() {
     console.log('Rock hit a laser')
     gHero.isShoot = false
     gHero.isShoot2 = false
-
+    playAudio(gSounds.rockDestroyed)
 }
 
 function onRockHitBunker(pos) {
     clearRockInterval()
     console.log('Rock hit a bunker')
     handleBunkerHit(pos)
+    playAudio(gSounds.bunkerHit)
 }
 
 function onRockHitHero() {
     clearRockInterval()
     console.log('Rock hit Hero')
     if (!gHero.isShield) handleHeroHit()
+        gHero.isShield ? playAudio(gSounds.shieldedHit) : playAudio(gSounds.dazed)
 }
