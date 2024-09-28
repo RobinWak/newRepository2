@@ -451,15 +451,6 @@ function addEffectToAlienHit(pos) {
     setTimeout(() => elAlien.classList.remove('hit'), 500)
 }
 
-function toggleTheme() {
-    // for now it's only the background that's toggling
-    console.log('thme')
-    gCurrentBackground++
-    if (gCurrentBackground > 3) gCurrentBackground = 1
-    const imgName = `bg${gCurrentBackground}`
-    document.body.style.backgroundImage = `url('/img/${imgName}.png')`
-}
-
 function toggleModal() {
     const elModal = getEl('.win-modal')
     elModal.classList.toggle('hidden')

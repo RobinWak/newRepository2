@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Invadors </title>
+    <title>Space Invaders</title>
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/hero.png" type="image/x-icon">
 </head>
@@ -21,8 +21,7 @@
         </div>
         
         <table class="board-container">
-            <tbody class="board">
-            </tbody>
+            <tbody class="board"></tbody>
         </table>
 
         <div class="controls-container">
@@ -49,10 +48,7 @@
                 <div class="bunkers-btn" onclick="toggleBunkers(this)">🧱</div>
                 <div onclick="toggleBunkers(document.querySelector('.bunkers-btn'))">Bunkers</div>
             </div>
-            <div title="Change game theme">
-                <div onclick="toggleTheme()" class="theme">🎨<span></span></div>
-                <div onclick="toggleTheme()">Theme</div>
-            </div>
+            
             <div title="Freeze aliens (best used for debugging!... or cheating!)">
                 <div class="freeze-btn" onclick="handleOnAlienFreeze()">❄️ <span>Off</span></div>
                 <div onclick="handleOnAlienFreeze()">Freeze Aliens</div>
@@ -67,7 +63,6 @@
         </div>
     </div>
 
-  
     <div class="win-modal hidden">
         <div class="modal-content">
             <span class="modal-message">Nothing to see here</span>
@@ -75,13 +70,10 @@
         </div>
     </div>
 
-
     <div class="instructions-modal hidden">
         <span class="instructions-message">Nothing to see here</span>
         <button onclick="toggleInstructions()">X</button>
     </div>
-   
-
 
     <script src="js/utils.js"></script>
     <script src="js/alien.js"></script>
@@ -89,5 +81,4 @@
     <script src="js/game.js"></script>
 
 </body>
-
 </html>

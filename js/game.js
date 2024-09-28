@@ -1,5 +1,7 @@
 'use strict'
 
+
+
 const BOARD_SIZE = 14
 
 const GAME_OBJECTS = {

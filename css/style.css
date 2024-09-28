@@ -53,15 +53,17 @@ button {
     background-color: #616467;
 }
 
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    background-image: url('/img/bg1.png');
-    background-size: cover;
-    background-position: center;
+    
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 100vh; 
+    margin: 0; 
+    background-image: url(../img/bg2.png)
 }
+
 
 .container {
     display: flex;
@@ -147,7 +149,7 @@ body {
 
 img {
     height: 30px;
-    weight: 30px;
+    
 }
 
 .modal-content, .instructions-modal {
@@ -178,21 +180,22 @@ button:hover {
 }
 
 .BUNKER {
-    background-image: url('/img/bunker.png');
+    
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url(../img/bunker.png)
 }
 
 .GROUND {
-    background-image: url('/img/ground3.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url(../img/ground3.png);
 }
 
 .HERO_GROUND {
-    background-image: url('/img/ground3-180.png');
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url(../img/ground3-180.png);
 }
 
 .transform-180 {
