@@ -44,6 +44,12 @@
                 </div>
                 <div onclick="toggleSound()">Sound</div>
             </div>
+            <div title="Change Theme">
+                <div class="themeImage">
+                    <span class="themeImage" onclick="changeTheme()">T</span>
+                </div>
+                <div onclick="changeTheme()">Theme</div>
+            </div>
             <div title="Add/remove bunkers from game">
                 <div class="bunkers-btn" onclick="toggleBunkers(this)">🧱</div>
                 <div onclick="toggleBunkers(document.querySelector('.bunkers-btn'))">Bunkers</div>
@@ -62,6 +68,8 @@
             <button class="game-modes" onclick="setDifficultyLevel('extreme')">Extreme</button>
         </div>
     </div>
+    </div>
+
 
     <div class="win-modal hidden">
         <div class="modal-content">

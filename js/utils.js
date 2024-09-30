@@ -460,4 +460,10 @@ function toggleInstructions() {
     const elModal = getEl('.instructions-modal')
     elModal.classList.toggle('hidden')
 }
+let currentThemeIndex = 0;
+const backgrounds = ['img/bg1.png', 'img/bg2.png', 'img/bg3.png'];
 
+function changeTheme() {
+    currentThemeIndex = (currentThemeIndex + 1) % backgrounds.length;
+    document.body.style.backgroundImage = `url(${backgrounds[currentThemeIndex]})`;
+}
